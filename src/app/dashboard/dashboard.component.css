@@ -1,0 +1,139 @@
+:host {
+  display: block;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #1e293b;
+}
+
+.dashboard-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.trigger-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.trigger-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.hero-section.high-risk {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.hero-content .value {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+/* Cards */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.card h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+}
+
+.card .reading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.card small {
+  font-size: 1rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Charts */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+}
+
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.chart-container h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+}

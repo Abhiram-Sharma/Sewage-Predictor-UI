@@ -1,0 +1,64 @@
+<div class="dashboard-container">
+  <header class="header">
+    <h1>Smart Sewage Blockage Predictor</h1>
+    <button class="trigger-btn" (click)="triggerReading()">Force Sensor Reading</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" [ngClass]="{'high-risk': (prediction?.blockage_risk_score || 0) > 70}">
+    <div class="hero-content">
+      <div class="risk-score">
+        <h2>Risk Score</h2>
+        <span class="value">{{ prediction?.blockage_risk_score | number:'1.0-0' }}%</span>
+      </div>
+      <div class="days-remaining">
+        <h2>Est. Days Until Cleaning</h2>
+        <span class="value">{{ prediction?.days_until_blockage ?? 'N/A' }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Status Cards -->
+  <section class="status-grid">
+    <div class="card">
+      <h3>Debris Depth</h3>
+      <p class="reading">{{ currentReading?.debris_depth_mm }} <small>mm</small></p>
+    </div>
+    <div class="card">
+      <h3>Methane (CH4)</h3>
+      <p class="reading">{{ currentReading?.methane_ppm }} <small>ppm</small></p>
+    </div>
+    <div class="card">
+      <h3>Hydrogen Sulfide (H2S)</h3>
+      <p class="reading">{{ currentReading?.h2s_ppm }} <small>ppm</small></p>
+    </div>
+    <div class="card">
+      <h3>Ammonia (NH3)</h3>
+      <p class="reading">{{ currentReading?.ammonia_ppm }} <small>ppm</small></p>
+    </div>
+  </section>
+
+  <!-- Historical Charts -->
+  <section class="charts-grid">
+    <div class="chart-container">
+      <h3>Debris Accumulation Trend</h3>
+      <div class="chart-wrapper">
+        <canvas baseChart
+          [data]="debrisChartData"
+          [options]="chartOptions"
+          [type]="'line'">
+        </canvas>
+      </div>
+    </div>
+    <div class="chart-container">
+      <h3>Bio-Gas Concentration Levels</h3>
+      <div class="chart-wrapper">
+        <canvas baseChart
+          [data]="gasChartData"
+          [options]="chartOptions"
+          [type]="'line'">
+        </canvas>
+      </div>
+    </div>
+  </section>
+</div>
