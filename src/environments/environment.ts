@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://reprogram-jolt-taco.ngrok-free.dev'
+  apiUrl: 'https://nature-devel-part-prefer.trycloudflare.com'
 };
